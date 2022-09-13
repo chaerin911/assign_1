@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pale Blue Dot</title>
+	
+	<style type="text/css">
+		body{margin: 0;}
+		section{background: white; color: white; margin: auto; position: relative; display: flex; padding: 5%; width: 1000px; justify-content: center; align: center}
+
+	</style>
+
+</head>
+
+
+
+<body>
+	<section>
+		<input id="vol" type="range" max="100" min="0" value="100">
+		<button id="dotBut">play</button>
+		<audio id="dotSnd" src="palebluedot.mp3"></audio>
+		<button id="stopBut">stop</button>
+		<script type="text/javascript">
+			vol.oninput = function(){dotSnd.volume = vol.value / 100;}
+			dotBut.onclick = function(){dotSnd.play();}
+			stopBut.onclick = function(){dotSnd.pause();}
+		</script>
+	</section>
+
+	<section>
+		<img id="flower" src="leo_.png" width="100%">
+		<script type="text/javascript">
+			//boolean 이라는 값은 true/false 만 있다;
+
+			var state = "off";
+
+			flower.onclick = function(){if(state == "off"){flower.src = "leo_hover.png"; state = "on";}
+										else if(state == "on"){flower.src = "leo_.png"; state = "off";}
+										}
+		</script>
+	</section>
+</body>
+</html>
